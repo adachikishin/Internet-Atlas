@@ -10,24 +10,33 @@
 
 <body>
     <header>
-        <div class="main">
-            <span class="material-symbols-outlined">home</span>
-            <span class="material-symbols-outlined">search</span>
-            <input class="搜尋欄" placeholder="搜尋">
-            <span class="material-symbols-outlined">light_mode</span>
-            <span class="material-symbols-outlined">dark_mode</span>
+        <div class="slot">
+            <button id="home"><span class="material-symbols-outlined">home</span></button>
+            <div class="search">
+                <span class="material-symbols-outlined">search</span>
+                <input class="搜尋欄" placeholder="搜尋">
+            </div>
+            <button id="light_mode"><span class="material-symbols-outlined">light_mode</span></button>
+            <button id="dark_mode"><span class="material-symbols-outlined">dark_mode</span></button>
         </div>
         <div class="tags">
-            <span class="material-symbols-outlined">filter_alt</span>
-            <span class="material-symbols-outlined">sort</span>
+            <div class="sort">
+                <select id="city" name="city">
+                <option value="taipei">依發行日期</option>
+                <option value="taichung">依擁有數</option>
+                <option value="kaohsiung" selected>隨機</option>
+            </select>
+            </div>
+            
             <ul>
-                <li><a href="#">全部</a></li>
-                <li><a href="#">黏土人</a></li>
+                <button id="全部">全部</button>
+                <button id="黏土人">黏土人</button>
             </ul>
+            <div class="pages"></div>
         </div>
     </header>
     <main>
-        <div class="pages"></div>
+        <p></p>
         <div class="photos"></div>
         <div class="pages"></div>
     </main>

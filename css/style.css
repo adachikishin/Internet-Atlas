@@ -2,3 +2,138 @@
     padding: 0;
     margin: 0;
 }
+header {
+    background-color: rgb(250, 250, 250);
+    height: 145px;
+    width: 100%;
+    position: fixed;
+}
+.slot {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.search {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 0;
+    width: auto;
+    left: 100px;
+    right: 100px;
+    padding: 25px;
+    border-radius: 50px;
+    background-color: rgb(230, 230, 230);
+}
+.search:hover {
+    background-color: rgb(220, 220, 220);
+}
+.search input {
+    font-size: 20px;
+    margin-left: 25px;
+    height: 50px;
+    width: 85vw;
+    font-family: "Lexend", sans-serif;
+    color: rgb(50, 50, 50);
+    outline: none;
+    border: none;
+    background: transparent;
+}
+#home {
+    position: absolute;
+    height: 0;
+    width: 0;
+    left: 25px;
+    padding: 25px;
+    border-radius: 50px;
+    background-color: rgb(250, 250, 250);
+    outline: none;
+    border: none;
+}
+#home span {
+    position: absolute;
+    left: 12.5px;
+    top: 12.5px;
+}
+#home:hover {
+    background-color: rgb(230, 230, 230);
+}
+#light_mode {
+    position: absolute;
+    height: 0;
+    width: 0;
+    right: 25px;
+    padding: 25px;
+    border-radius: 50px;
+    background-color: rgb(250, 250, 250);
+    outline: none;
+    border: none;
+}
+#dark_mode {
+    position: absolute;
+    height: 0;
+    width: 0;
+    right: 25px;
+    padding: 25px;
+    border-radius: 50px;
+    background-color: rgb(250, 250, 250);
+    outline: none;
+    border: none;
+}
+#light_mode span {
+    position: absolute;
+    left: 12.5px;
+    top: 12.5px;
+}
+#dark_mode span {
+    position: absolute;
+    left: 12.5px;
+    top: 12.5px;
+}
+.tags {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.sort {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 0;
+    width: 120px;
+    top: 80px;
+    left: 25px;
+    padding: 25px;
+    border-radius: 50px;
+    background-color: rgb(230, 230, 230);
+}
+.sort:hover {
+    background-color: rgb(220, 220, 220);
+}
+.sort select {
+    font-size: 20px;
+    margin-right: 50px;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+.tags ul {
+    position: absolute;
+    left: 200px;
+    top: 80px;
+}
+.tags button {
+    font-size: 19px;
+    margin-left: 25px;
+    padding: 13px 20px;
+    border-radius: 50px;
+    background-color: rgb(230, 230, 230);
+    outline: none;
+    border: none;
+}
+.tags button:hover {
+    background-color: rgb(220, 220, 220);
+}
+main p {
+    height: 120px;
+}
