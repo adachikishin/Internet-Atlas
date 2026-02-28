@@ -1,6 +1,7 @@
 {
-    "type":[
+    "type" : [
         {
+            "link" : "assets/test/名稱.jpg",
             "name" : "名稱",
             "roles" : ["角色一", "角色二"],
             "company" : "公司",
@@ -9,12 +10,35 @@
             "latest-sale" : "yyyy/mm"
         },
         {
+            "link" : "assets/test/名稱.png",
             "name" : "名稱",
             "roles" : ["角色一", "角色二"],
             "company" : "公司",
             "series" : "系列",
             "first-sale" : "yyyy/mm",
             "latest-sale" : "yyyy/mm"
+        }
+    ],
+    "stone" : [
+        {
+            "url" : "assets/stone/s001.jpg",
+            "name" : "含鎳霞石",
+            "id" : "s001"
+        },
+        {
+            "url" : "assets/stone/s002.jpg",
+            "name" : "骨幹水晶",
+            "id" : "s002"
+        },
+        {
+            "url" : "assets/stone/s003.jpg",
+            "name" : "十二面體黃鐵礦",
+            "id" : "s003"
+        },
+        {
+            "url" : "assets/stone/s004.jpg",
+            "name" : "銀星石",
+            "id" : "s004"
         }
     ]
 }
