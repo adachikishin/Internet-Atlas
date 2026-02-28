@@ -1,0 +1,20 @@
+{
+    "type":[
+        {
+            "name" : "名稱",
+            "roles" : ["角色一", "角色二"],
+            "company" : "公司",
+            "series" : "系列",
+            "first-sale" : "yyyy/mm",
+            "latest-sale" : "yyyy/mm"
+        },
+        {
+            "name" : "名稱",
+            "roles" : ["角色一", "角色二"],
+            "company" : "公司",
+            "series" : "系列",
+            "first-sale" : "yyyy/mm",
+            "latest-sale" : "yyyy/mm"
+        }
+    ]
+}
