@@ -39,6 +39,26 @@
             "url" : "assets/stone/s004.jpg",
             "name" : "銀星石",
             "id" : "s004"
+        },
+        {
+            "url" : "assets/stone/s005.jpg",
+            "name" : "天河石",
+            "id" : "s005"
+        },
+        {
+            "url" : "assets/stone/s006.jpg",
+            "name" : "海水藍寶",
+            "id" : "s006"
+        },
+        {
+            "url" : "assets/stone/s007.jpg",
+            "name" : "綠幽靈水晶",
+            "id" : "s007"
+        },
+        {
+            "url" : "assets/stone/s008.jpg",
+            "name" : "孔雀石",
+            "id" : "s008"
         }
     ]
 }

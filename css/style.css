@@ -134,6 +134,25 @@ header {
 .tags button:hover {
     background-color: rgb(220, 220, 220);
 }
+
+main {
+    width: 100%;
+}
 main p {
-    height: 120px;
+    height: 145px;
+}
+main .photos {
+    display: grid;
+    grid-template-columns: repeat(4, 25vw);
+}
+main img {
+    border-radius: 50px;
+    margin: 2.5vw;
+    width: 20vw;
+    height: 20vw;
+}
+
+footer {
+    background-color: rgb(235, 245, 255);
+    height: 80px;
 }
