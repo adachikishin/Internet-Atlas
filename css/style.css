@@ -13,6 +13,35 @@ header {
     display: flex;
     align-items: center;
 }
+.icon-button {
+    height: 0;
+    width: 0;
+    padding: 25px;
+    border-radius: 50px;
+    background-color: rgba(200, 200, 200, 0);
+    outline: none;
+    border: none;
+}
+.icon-button:hover {
+    background-color: rgba(200, 200, 200, 0.5);
+}
+#home {
+    position: absolute;
+    left: 25px;
+}
+#light-mode {
+    position: absolute;
+    right: 25px;
+}
+#dark-mode {
+    position: absolute;
+    right: 25px;
+}
+.icon-button span{
+    position: absolute;
+    left: 12.5px;
+    top: 12.5px;
+}
 .search {
     position: absolute;
     display: flex;
@@ -37,102 +66,59 @@ header {
     color: rgb(50, 50, 50);
     outline: none;
     border: none;
-    background: transparent;
+    background: none;
 }
-#home {
+#search{
     position: absolute;
-    height: 0;
-    width: 0;
-    left: 25px;
-    padding: 25px;
+    right: 0px;
+}
+
+.filter {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 80;
+    top: 45px;
+}
+.font-button {
+    font-size: 19px;
+    padding: 13px 20px;
     border-radius: 50px;
-    background-color: rgb(250, 250, 250);
     outline: none;
-    border: none;
 }
-#home span {
+.dropdown-menu {
     position: absolute;
-    left: 12.5px;
-    top: 12.5px;
+    left: 25px;
+    top: 80px;
 }
-#home:hover {
+.dropdown-menu button {
+    color: rgb(50, 50, 50);
+    background-color: rgb(250, 250, 250);
+    border-color: rgb(50, 50, 50);
+}
+.dropdown-menu button:hover {
     background-color: rgb(230, 230, 230);
 }
-#light_mode {
+.dropdown-menu-option {
     position: absolute;
-    height: 0;
-    width: 0;
-    right: 25px;
-    padding: 25px;
-    border-radius: 50px;
-    background-color: rgb(250, 250, 250);
-    outline: none;
-    border: none;
 }
-#dark_mode {
-    position: absolute;
-    height: 0;
-    width: 0;
-    right: 25px;
-    padding: 25px;
-    border-radius: 50px;
-    background-color: rgb(250, 250, 250);
-    outline: none;
-    border: none;
-}
-#light_mode span {
-    position: absolute;
-    left: 12.5px;
-    top: 12.5px;
-}
-#dark_mode span {
-    position: absolute;
-    left: 12.5px;
-    top: 12.5px;
+.dropdown-menu-option button{
+    margin-top: 25px;
+    margin-right: 25px;
 }
 .tags {
-    height: 80px;
-    display: flex;
-    align-items: center;
-}
-.sort {
     position: absolute;
-    display: flex;
-    align-items: center;
-    height: 0;
-    width: 120px;
-    top: 80px;
-    left: 25px;
-    padding: 25px;
-    border-radius: 50px;
-    background-color: rgb(230, 230, 230);
-}
-.sort:hover {
-    background-color: rgb(220, 220, 220);
-}
-.sort select {
-    font-size: 20px;
-    margin-right: 50px;
-    outline: none;
-    border: none;
-    background: transparent;
-}
-.tags ul {
-    position: absolute;
-    left: 200px;
+    left: 150px;
     top: 80px;
 }
 .tags button {
-    font-size: 19px;
+    color: rgb(250, 250, 250);
+    background-color: rgb(205, 230, 255);
     margin-left: 25px;
-    padding: 13px 20px;
-    border-radius: 50px;
-    background-color: rgb(230, 230, 230);
-    outline: none;
     border: none;
 }
 .tags button:hover {
-    background-color: rgb(220, 220, 220);
+    background-color: rgb(155, 205, 255);
 }
 
 main {
