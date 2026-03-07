@@ -4,14 +4,12 @@
 }
 header {
     background-color: rgb(250, 250, 250);
-    height: 145px;
+    height: 80px;
     width: 100%;
     position: fixed;
-}
-.slot {
-    height: 80px;
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 .icon-button {
     height: 0;
@@ -21,9 +19,15 @@ header {
     background-color: rgba(200, 200, 200, 0);
     outline: none;
     border: none;
+    transition: 150ms ease;
 }
 .icon-button:hover {
     background-color: rgba(200, 200, 200, 0.5);
+}
+.icon-button span{
+    position: absolute;
+    left: 12.5px;
+    top: 12.5px;
 }
 #home {
     position: absolute;
@@ -37,22 +41,17 @@ header {
     position: absolute;
     right: 25px;
 }
-.icon-button span{
-    position: absolute;
-    left: 12.5px;
-    top: 12.5px;
-}
 .search {
     position: absolute;
     display: flex;
     align-items: center;
-    height: 0;
+    height: 50px;
     width: auto;
     left: 100px;
     right: 100px;
-    padding: 25px;
     border-radius: 50px;
     background-color: rgb(230, 230, 230);
+    transition: 150ms ease;
 }
 .search:hover {
     background-color: rgb(220, 220, 220);
@@ -73,72 +72,45 @@ header {
     right: 0px;
 }
 
-.filter {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    height: 80;
-    top: 45px;
-}
-.font-button {
-    font-size: 19px;
-    padding: 13px 20px;
-    border-radius: 50px;
-    outline: none;
-}
-.dropdown-menu {
-    position: absolute;
-    left: 25px;
-    top: 80px;
-}
-.dropdown-menu button {
-    color: rgb(50, 50, 50);
-    background-color: rgb(250, 250, 250);
-    border-color: rgb(50, 50, 50);
-}
-.dropdown-menu button:hover {
-    background-color: rgb(230, 230, 230);
-}
-.dropdown-menu-option {
-    position: absolute;
-}
-.dropdown-menu-option button{
-    margin-top: 25px;
-    margin-right: 25px;
-}
-.tags {
-    position: absolute;
-    left: 150px;
-    top: 80px;
-}
-.tags button {
-    color: rgb(250, 250, 250);
-    background-color: rgb(205, 230, 255);
-    margin-left: 25px;
-    border: none;
-}
-.tags button:hover {
-    background-color: rgb(155, 205, 255);
-}
-
 main {
     width: 100%;
 }
 main p {
-    height: 145px;
+    height: 80px;
 }
-main .photos {
+.display {
+    display: flex;
+}
+aside {
+    width: 10vw;
+    background-color: rgb(235, 245, 255);
+}
+.photos {
     display: grid;
-    grid-template-columns: repeat(4, 25vw);
+    width: 90vw;
+    grid-template-columns: repeat(4, 25%);
 }
-main img {
+.openModalBtn {
     border-radius: 50px;
-    margin: 2.5vw;
-    width: 20vw;
-    height: 20vw;
+    margin: 5%;
+    width: 90%;
+    height: 90%;
+    background-color: none;
+    border: none;
+    transition: 150ms ease;
+}
+.openModalBtn:hover {
+    margin: 2.5%;
+    width: 95%;
+    height: 95%;
+}
+.preview {
+    border-radius: 50px;
+    width: 100%;
+    height: 100%;
 }
 
 footer {
-    background-color: rgb(235, 245, 255);
+    background-color: rgb(215, 235, 255);
     height: 80px;
 }

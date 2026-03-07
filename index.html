@@ -11,38 +11,41 @@
 <body>
 
     <header>
-
-        <div class="slot">
-            <button type="button" class="icon-button" id="home"><span class="material-symbols-outlined">home</span></button>
-            <div class="search">
-                <button type="button" class="icon-button" id="search"><span class="material-symbols-outlined">search</span></button>
-                <input class="搜尋欄" placeholder="搜尋">
-            </div>
-            <button type="button" class="icon-button" id="light-mode"><span class="material-symbols-outlined">light_mode</span></button>
-            <button type="button" class="icon-button" id="dark-mode"><span class="material-symbols-outlined">dark_mode</span></button>
+        <button type="button" class="icon-button" id="home"><span class="material-symbols-outlined">home</span></button>
+        <div class="search">
+            <button type="button" class="icon-button" id="search"><span class="material-symbols-outlined">search</span></button>
+            <input class="搜尋欄" placeholder="搜尋">
         </div>
-
-        <div id="filter">
-            <div class="dropdown-menu">
-                <button type="button" class="font-button">排序依據</button>
-                <ul class="dropdown-menu-option">
-                    <button type="button" class="font-button" id="def">預設</button>
-                    <button type="button" class="font-button" id="like">喜歡</button>
-                    <button type="button" class="font-button" id="want">想買</button>
-                    <button type="button" class="font-button" id="owned">擁有</button>
-                </ul>
-            </div>
-            <ul class="tags">
-                <button type="button" class="font-button" id="all">全部</button>
-                <button type="button" class="font-button" id="nendoroid">黏土人</button>
-            </ul>
-            <div class="pages"></div>
-        </div>
+        <button type="button" class="icon-button" id="light-mode"><span class="material-symbols-outlined">light_mode</span></button>
+        <button type="button" class="icon-button" id="dark-mode"><span class="material-symbols-outlined">dark_mode</span></button>
     </header>
     <main>
         <p></p>
-        <div class="photos"></div>
-        <div class="pages"></div>
+        <section class="display">
+            <aside>
+                <h2>123</h2>
+            </aside>
+            <section>
+                <div class="pages"></div>
+                <div class="photos"></div>
+                <div class="pages"></div>
+            </section>
+        </section>
+        <dialog id="item-modal">
+            <article>
+                <img id="img">
+                <section>
+                    <h1 id="name"></h1>
+                    <h2 id="type"></h2>
+                    <p id="character"></p>
+                    <p id="company"></p>
+                    <p id="series"></p>
+                    <p id="first"></p>
+                    <p id="last"></p>
+                    <button type="button" onclick="closeModal()" id="close-modal">x</button>
+                </section>
+            </article>
+        </dialog>
     </main>
     <footer>
         <p></p>

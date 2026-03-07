@@ -1,5 +1,12 @@
 // 獲取 HTML 中要放入卡片的容器
-const container = document.querySelector(".photos")
+const photos = document.querySelector(".photos");
+let originalData = [];
+let displayData = [];
+
+const maxItemCount = 40;
+let page = 0;
+let maxPageCount = 0;
+let filters = [0, 0, 0];;
 
 // 異步讀取資料的函式
 async function loadJSON() {
@@ -13,22 +20,42 @@ async function loadJSON() {
         // 2. 解析 JSON 轉成 JS 物件/陣列
         const items = await response.json();
 
-        // 3. 呼叫渲染函式
-        render(items);
+        // 3. 處理資料
+        originalData = items;
+        filter();
         
     } catch (error) {
         console.error('發生錯誤:', error);
-        galleryContainer.innerHTML = '<p>資料載入失敗，請稍後再試。</p>';
+        photos.innerHTML = '<p>資料載入失敗，請稍後再試。</p>';
     }
 }
 
-function render(items) {
-    items.stone.forEach(item => {
-        const photo = document.createElement("img");
+function filter() {
+    if (filters.reduce((accumulator, currentValue) => accumulator + currentValue, 0) == 0) {
+        displayData = originalData;
+    }
+    render();
+}
+
+function render() {
+    photos.innerHTML = '';
+    let max = maxItemCount;
+    const start = page * maxItemCount;
+    const end = start + maxItemCount;
+    const itemsToRender = displayData.slice(start, end);
+    itemsToRender.forEach(item => {
+        const button = document.createElement('button');
+        button.dataset.id = item.id;
+        button.className = 'openModalBtn';
+
+        const photo = document.createElement('img');
         photo.src = item.url;
         photo.alt = item.name;
-        container.append(photo);
-    });
+        photo.className = 'preview';
+
+        button.appendChild(photo);
+        photos.append(button);
+    })
 }
 
 loadJSON();
