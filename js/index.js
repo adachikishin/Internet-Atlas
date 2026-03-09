@@ -1,12 +1,13 @@
 // 獲取 HTML 中要放入卡片的容器
 const photos = document.querySelector(".photos");
+const pages = document.querySelectorAll(".pages");
 let originalData = [];
 let displayData = [];
 
 const maxItemCount = 40;
 let page = 0;
 let maxPageCount = 0;
-let filters = [0, 0, 0];;
+let filters = [0, 0, 0];
 
 // 異步讀取資料的函式
 async function loadJSON() {
@@ -39,7 +40,6 @@ function filter() {
 
 function render() {
     photos.innerHTML = '';
-    let max = maxItemCount;
     const start = page * maxItemCount;
     const end = start + maxItemCount;
     const itemsToRender = displayData.slice(start, end);
@@ -57,5 +57,26 @@ function render() {
         photos.append(button);
     })
 }
+
+function nextPage(){
+    if (page < maxPageCount) {
+        page++;
+        pageDisplay();
+        render();
+    }
+}
+function lastPage(){
+    if (page > 0) {
+        page--;
+        pageDisplay();
+        render();
+    }
+}
+function pageDisplay(){
+    pages.forEach(page => {
+        
+    })
+}
+
 
 loadJSON();
