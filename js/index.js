@@ -5,8 +5,8 @@ let originalData = [];
 let displayData = [];
 
 const maxItemCount = 4;
-let page = 0;
-let maxPageCount = 1;
+let page = 1;
+let maxPageCount = 2;
 let filters = [0, 0, 0];
 
 const columns = 4;
@@ -42,7 +42,7 @@ function filter() {
 
 function render() {
     photos.innerHTML = '';
-    const start = page * maxItemCount;
+    const start = (page - 1) * maxItemCount;
     const end = start + maxItemCount;
     const itemsToRender = displayData.slice(start, end);
     itemsToRender.forEach(item => {
@@ -102,17 +102,18 @@ function nextPage(){
     }
 }
 function lastPage(){
-    if (page > 0) {
+    if (page > 1) {
         page--;
         pageDisplay();
         render();
     }
 }
 function pageDisplay(){
-    pages.forEach(page => {
-        
-    })
+    const pages = document.querySelectorAll(".pages");
+    pages.forEach(e => {
+        e.innerText = page + "/" + maxPageCount;
+    });
 }
 
-
+pageDisplay();
 loadJSON();
