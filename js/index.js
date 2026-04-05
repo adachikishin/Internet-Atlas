@@ -4,10 +4,12 @@ const pages = document.querySelectorAll(".pages");
 let originalData = [];
 let displayData = [];
 
-const maxItemCount = 40;
+const maxItemCount = 4;
 let page = 0;
-let maxPageCount = 0;
+let maxPageCount = 1;
 let filters = [0, 0, 0];
+
+const columns = 4;
 
 // 異步讀取資料的函式
 async function loadJSON() {
@@ -56,6 +58,40 @@ function render() {
         button.appendChild(photo);
         photos.append(button);
     })
+}
+
+function openDropdown(element) {
+    const parent = element.parentNode;
+    parent.classList.toggle('is-open');
+    const isOpen = parent.classList.contains('is-open');
+
+    const list = parent.querySelector('.dropdown-list')
+    const options = list.querySelectorAll('.dropdown-option');
+    
+    let i = 0, j = 0; 
+    if (isOpen) {
+        list.style.left = '100px';
+        options.forEach(option => {
+            option.style.top = (60 * i) + 'px';
+            option.style.left = (100 * j) + 'px';
+            j++;
+            j %= columns;
+            if (j == 0) {
+                i++;
+            }
+        });
+    }
+    else {
+        list.style.left = '0px';
+        options.forEach(option => {
+            option.style.top = '0px';
+            option.style.left = '0px';
+        });
+    }
+}
+function filterBtn(element) {
+    element.classList.toggle('select');
+    console.log(element);
 }
 
 function nextPage(){

@@ -20,18 +20,44 @@
         <button type="button" class="icon-button" id="dark-mode"><span class="material-symbols-outlined">dark_mode</span></button>
     </header>
     <main>
-        <p></p>
-        <section class="display">
-            <aside>
+        <p class="space"></p>
+        <section class="content">
+            <aside class="aside">
+                <section class="dropdown" id="type">
+                    <button class="dropdown-button" onclick="openDropdown(this)">類別</button>
+                    <div class="dropdown-list">
+                        <button class="dropdown-option" onclick="filterBtn(this)">option 1</button>
+                        <button class="dropdown-option" onclick="filterBtn(this)">option 2</button>
+                        <button class="dropdown-option" onclick="filterBtn(this)">option 3</button>
+                        <button class="dropdown-option" onclick="filterBtn(this)">option 4</button>
+                        <button class="dropdown-option" onclick="filterBtn(this)">option 5</button>
+                        <button class="dropdown-option" onclick="filterBtn(this)">option 6</button>
+                    </ul>
+                </section>
+                <section class="dropdown" id="character">
+                    <button class="dropdown-button" onclick="openDropdown(this)">角色</button>
+                    <div class="dropdown-list">
+                        <button class="dropdown-option" onclick="filterBtn(this)">option 1</button>
+                        <button class="dropdown-option" onclick="filterBtn(this)">option 2</button>
+                        <button class="dropdown-option" onclick="filterBtn(this)">option 3</button>
+                        <button class="dropdown-option" onclick="filterBtn(this)">option 4</button>
+                        <button class="dropdown-option" onclick="filterBtn(this)">option 5</button>
+                        <button class="dropdown-option" onclick="filterBtn(this)">option 6</button>
+                    </ul>
+                </section>
             </aside>
-            <section>
+            <section class="display">
                 <div class="page-display">
-                    <button class="switch-page">&lt</button>
+                    <button class="switch-page" onclick="lastPage()">&lt</button>
                     <p class="pages"></p>
-                    <button class="switch-page">&gt</button>
+                    <button class="switch-page" onclick="nextPage()">&gt</button>
                 </div>
                 <div class="photos"></div>
-                <div class="page-display"></div>
+                <div class="page-display">
+                    <button class="switch-page" onclick="lastPage()">&lt</button>
+                    <p class="pages"></p>
+                    <button class="switch-page" onclick="nextPage()">&gt</button>
+                </div>
             </section>
         </section>
         <dialog id="item-modal">
