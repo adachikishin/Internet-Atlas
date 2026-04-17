@@ -234,7 +234,13 @@ main {
     height: 100%;
 }
 
-
+.item-modal {
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    background-color: #efefef;
+    align-content: center;
+}
 
 footer {
     background-color: var(--footer-background-color);

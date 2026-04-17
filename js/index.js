@@ -1,6 +1,7 @@
 // 獲取 HTML 中要放入卡片的容器
 const photos = document.querySelector(".photos");
 const pages = document.querySelectorAll(".pages");
+const modal = document.querySelector(".item-modal");
 let originalData = [];
 let displayData = [];
 
@@ -49,6 +50,9 @@ function render() {
         const button = document.createElement('button');
         button.dataset.id = item.id;
         button.className = 'openModalBtn';
+        button.addEventListener('click', function() {
+            modal.showModal();
+        });
 
         const photo = document.createElement('img');
         photo.src = item.url;
@@ -92,6 +96,13 @@ function openDropdown(element) {
 function filterBtn(element) {
     element.classList.toggle('select');
     console.log(element);
+}
+
+function openModal(element) {
+    element.showModal();
+}
+function closeModal(element) {
+    element.close();
 }
 
 function nextPage(){
