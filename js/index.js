@@ -6,20 +6,28 @@ const modal = document.querySelector(".item-modal");
 let originalData = [];
 let displayData = [];
 
-const maxItemCount = 4;
-let page = 1;
-let maxPageCount = 2;
+const maxItemCount = 5;
+let page = 0;
+let maxPageCount = 0;
 let filters = [0, 0, 0];
 
 const columns = 4;
 
 window.addEventListener('click', (event) => {
     dropdowns.forEach(dropdown => {
-        console.log('click')
+        const list = dropdown.nextElementSibling;
+        const options = list.querySelectorAll('.dropdown-option');
+        let isInOption = 0;
+        options.forEach(option => {
+            if (option.contains(event.target)) {
+                isInOption++;
+            }
+        })
+        console.log(isInOption)
         if (dropdown.contains(event.target)) {
             openDropdown(dropdown);
         }
-        else {
+        else if(isInOption == 0) {
             closeDropdown(dropdown);
         }
     })
