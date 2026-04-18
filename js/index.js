@@ -1,6 +1,7 @@
 // 獲取 HTML 中要放入卡片的容器
 const photos = document.querySelector(".photos");
 const pages = document.querySelectorAll(".pages");
+const dropdowns = document.querySelectorAll(".dropdown-button");
 const modal = document.querySelector(".item-modal");
 let originalData = [];
 let displayData = [];
@@ -70,11 +71,10 @@ function render() {
 }
 
 function openDropdown(element) {
-    const parent = element.parentNode;
-    parent.classList.toggle('is-open');
-    const isOpen = parent.classList.contains('is-open');
+    element.classList.toggle('is-open');
+    const isOpen = element.classList.contains('is-open');
 
-    const list = parent.querySelector('.dropdown-list')
+    const list = element.nextElementSibling;
     const options = list.querySelectorAll('.dropdown-option');
     
     let i = 0, j = 0; 
@@ -98,16 +98,47 @@ function openDropdown(element) {
         });
     }
 }
-function filterBtn(element) {
-    element.classList.toggle('select');
-    console.log(element);
+
+function closeDropdown(element) {
+    const isOpen = element.classList.contains('is-open');
+
+    if (isOpen) {
+        element.classList.toggle('is-open');
+        list.style.left = '0px';
+        options.forEach(option => {
+            option.style.top = '0px';
+            option.style.left = '0px';
+        });
+    }
 }
 
-//function openModal(element) {
-//    element.showModal();
-//}
-function closeModal(element) {
-    element.close();
+function dropdown() {
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', (event) => {
+            // 取得點擊位置
+            const rect = dropdown.getBoundingClientRect();
+            // 判斷範圍
+            const isInDropdown = (
+                event.clientX >= rect.left &&
+                event.clientX <= rect.right &&
+                event.clientY >= rect.top &&
+                event.clientY <= rect.bottom
+            );
+
+            if (isInDropdown) {
+                openDropdown(dropdown);
+                console.log("In");
+            }
+            else {
+                closeDropdown(dropdown);
+                console.log("out")
+            }
+        });
+    });
+}
+
+function filterBtn(element) {
+    element.classList.toggle('select');
 }
 
 function nextPage(){
@@ -147,6 +178,7 @@ function init(){
             modal.close();
         }
     });
+    dropdown();
     pageDisplay();
     loadJSON();
 }
