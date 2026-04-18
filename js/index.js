@@ -13,6 +13,18 @@ let filters = [0, 0, 0];
 
 const columns = 4;
 
+window.addEventListener('click', (event) => {
+    dropdowns.forEach(dropdown => {
+        console.log('click')
+        if (dropdown.contains(event.target)) {
+            openDropdown(dropdown);
+        }
+        else {
+            closeDropdown(dropdown);
+        }
+    })
+});
+
 // 異步讀取資料的函式
 async function loadJSON() {
     try {
@@ -39,6 +51,8 @@ function filter() {
     if (filters.reduce((accumulator, currentValue) => accumulator + currentValue, 0) == 0) {
         displayData = originalData;
     }
+    maxPageCount = Math.ceil(displayData.length / maxItemCount);
+    page = 1;
     render();
 }
 
@@ -104,37 +118,14 @@ function closeDropdown(element) {
 
     if (isOpen) {
         element.classList.toggle('is-open');
+        const list = element.nextElementSibling;
+        const options = list.querySelectorAll('.dropdown-option');
         list.style.left = '0px';
         options.forEach(option => {
             option.style.top = '0px';
             option.style.left = '0px';
         });
     }
-}
-
-function dropdown() {
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', (event) => {
-            // 取得點擊位置
-            const rect = dropdown.getBoundingClientRect();
-            // 判斷範圍
-            const isInDropdown = (
-                event.clientX >= rect.left &&
-                event.clientX <= rect.right &&
-                event.clientY >= rect.top &&
-                event.clientY <= rect.bottom
-            );
-
-            if (isInDropdown) {
-                openDropdown(dropdown);
-                console.log("In");
-            }
-            else {
-                closeDropdown(dropdown);
-                console.log("out")
-            }
-        });
-    });
 }
 
 function filterBtn(element) {
@@ -178,7 +169,6 @@ function init(){
             modal.close();
         }
     });
-    dropdown();
     pageDisplay();
     loadJSON();
 }
