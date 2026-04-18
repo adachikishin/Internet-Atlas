@@ -6,6 +6,7 @@
     --search-hover-color: #e5e5e5;
 
     --main-background-color: #ceeefb;
+    --display-background-color: #ceeefb;
     --aside-background-color: #9ebecb;
     --button-color: #efefef;
     --button-border-color: #7296a4;
@@ -100,13 +101,11 @@ header {
 
 main {
     width: 100%;
+    display: flex;
     background-color: var(--main-background-color);
 }
 .space {
     height: 80px;
-}
-.content {
-    display: flex;
 }
 
 .aside {
@@ -176,6 +175,7 @@ main {
 
 .display {
     width:auto;
+    background-color: var(--display-background-color);
 }
 .page-display {
     display: flex;
