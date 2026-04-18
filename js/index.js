@@ -51,6 +51,8 @@ function render() {
         button.dataset.id = item.id;
         button.className = 'openModalBtn';
         button.addEventListener('click', function() {
+            const img = modal.querySelector('img');
+            img.src = item.url;
             modal.showModal();
         });
 
@@ -98,9 +100,9 @@ function filterBtn(element) {
     console.log(element);
 }
 
-function openModal(element) {
-    element.showModal();
-}
+//function openModal(element) {
+//    element.showModal();
+//}
 function closeModal(element) {
     element.close();
 }
@@ -126,5 +128,24 @@ function pageDisplay(){
     });
 }
 
-pageDisplay();
-loadJSON();
+function init(){
+    modal.addEventListener('click', (event) => {
+        // 取得點擊位置
+        const rect = modal.getBoundingClientRect();
+        // 判斷範圍
+        const isInDialog = (
+            event.clientX >= rect.left &&
+            event.clientX <= rect.right &&
+            event.clientY >= rect.top &&
+            event.clientY <= rect.bottom
+        );
+
+        if (!isInDialog) {
+            modal.close();
+        }
+    });
+    pageDisplay();
+    loadJSON();
+}
+
+init();

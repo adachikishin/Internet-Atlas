@@ -236,12 +236,17 @@ main {
 
 .item-modal {
     margin: auto;
-    width: 500px;
-    height: 500px;
+    width: 80vw;
+    height: 40vw;
     background-color: #efefef;
     align-content: center;
+    border: none;
+    border-radius: 25px;
 }
-
+.item-modal img {
+    width: 50%;
+    height: auto;
+}
 footer {
     background-color: var(--footer-background-color);
     height: 250px;
