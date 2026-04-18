@@ -52,7 +52,10 @@ function render() {
         button.className = 'openModalBtn';
         button.addEventListener('click', function() {
             const img = modal.querySelector('img');
+            const sec = modal.querySelector('sec');
+            const name = modal.querySelector('.name');
             img.src = item.url;
+            name.innerHTML = item.name;
             modal.showModal();
         });
 

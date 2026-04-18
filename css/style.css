@@ -5,7 +5,7 @@
     --search-color: #efefef;
     --search-hover-color: #e5e5e5;
 
-    --main-background-color: #efefef;
+    --main-background-color: #ceeefb;
     --aside-background-color: #9ebecb;
     --button-color: #efefef;
     --button-border-color: #7296a4;
@@ -243,10 +243,17 @@ main {
     border: none;
     border-radius: 25px;
 }
-.item-modal img {
-    width: 50%;
-    height: auto;
+.item-modal article {
+    display: flex;
 }
+.item-modal img {
+    width: 40vw;
+    height: 40vw;
+}
+.item-modal section {
+    margin: 15px;
+}
+
 footer {
     background-color: var(--footer-background-color);
     height: 250px;
