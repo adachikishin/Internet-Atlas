@@ -9,7 +9,19 @@ let displayData = [];
 const maxItemCount = 5;
 let page = 0;
 let maxPageCount = 0;
-let filters = [0, 0, 0];
+let filters = {
+    'type': {
+        
+    },
+    'color': {
+        'red': false,
+        'yellow': false,
+        'green': false,
+        'blue': false,
+        'white': false,
+        'black': false
+    }
+};
 
 const columns = 4;
 
@@ -23,7 +35,6 @@ window.addEventListener('click', (event) => {
                 isInOption++;
             }
         })
-        console.log(isInOption)
         if (dropdown.contains(event.target)) {
             openDropdown(dropdown);
         }
@@ -55,12 +66,16 @@ async function loadJSON() {
     }
 }
 
+function filterBtn(element) {
+    element.classList.toggle('select');
+    filters[element.parentElement.parentElement.id][element.id] = element.classList.contains('select');
+}
+
 function filter() {
-    if (filters.reduce((accumulator, currentValue) => accumulator + currentValue, 0) == 0) {
-        displayData = originalData;
-    }
+    displayData = originalData;
     maxPageCount = Math.ceil(displayData.length / maxItemCount);
     page = 1;
+    pageDisplay();
     render();
 }
 
@@ -136,10 +151,6 @@ function closeDropdown(element) {
     }
 }
 
-function filterBtn(element) {
-    element.classList.toggle('select');
-}
-
 function nextPage(){
     if (page < maxPageCount) {
         page++;
@@ -177,7 +188,6 @@ function init(){
             modal.close();
         }
     });
-    pageDisplay();
     loadJSON();
 }
 
